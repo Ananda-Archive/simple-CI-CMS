@@ -3,7 +3,7 @@
 }
 
 
-.home-post-list {
+.home-post-list, .post-list-detail {
 	min-height: 50vh;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, .20);
 }
@@ -17,11 +17,6 @@
 
 }
 
-.post-list-header > p {
+.post-list-header > p , .post-list-detail-header > p{
 	color: grey;
 }
-
-.post-list-content {
-	text-align: justify;
-}
-

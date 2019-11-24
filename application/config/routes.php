@@ -7,4 +7,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 //Pages
-$route['view_post'] = 'Pages/view_post';
+

@@ -15,6 +15,11 @@ class M_Post extends CI_Model {
 		return $query;
 	}
 
+	public function get_posted($id) {
+		$query = $this->db->query("SELECT * FROM post WHERE id = '".$id."'");
+		return $query;
+	}
+
 }
 
 ?>
