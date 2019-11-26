@@ -9,4 +9,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['registers'] = 'pages/register';
 $route['logins'] = 'pages/login';
 $route['profile'] = 'pages/profile';
+$route['create_post'] = 'pages/create_post';
 

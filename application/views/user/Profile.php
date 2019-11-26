@@ -1,9 +1,18 @@
         <div class="container-fluid vh-75">
             <div class="row vh-75">
-                <div class="col-12 d-flex justify-content-center mt-3s">
+                <div class="col-12 d-flex justify-content-center mt-3">
                     <div class="row crud-box p-4">
                         <div class="col-12 profile-post-header">
-                            <h1>My Post</h1>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h1>My Post</h1>
+                                </div>
+                                <div class="col-6 d-flex align-items-center justify-content-end">
+                                    <a href="<?=base_url('create_post')?>">
+                                        <button type="button" class="btn btn-success">+ Create Post</button>
+                                    </a>
+                                </div>
+                            </div>
                             <hr>
                         </div>
                         <div class="col-12">
