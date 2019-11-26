@@ -6,8 +6,16 @@
 		</div>
 	</a>
 	<div class="float-right">
-		<a href="<?=base_url('login')?>">
-			<button type="button" class="btn btn-success">Login</button>
-		</a>
+		<?php
+
+		if($this->session->userdata('id') != NULL) { ?>
+			<a href="<?=base_url('login/uselogout')?>">
+				<button type="button" class="btn btn-danger">Logout</button>
+			</a>
+		<?php } else {?>
+			<a href="<?=base_url('logins')?>">
+				<button type="button" class="btn btn-success">Login</button>
+			</a>
+		<?php } ?>
 	</div>
 </nav>
