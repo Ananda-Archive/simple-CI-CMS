@@ -11,13 +11,15 @@ class M_Post extends CI_Model {
 	private $date_updated;
 
 	public function read_posted() {
-		$query = $this->db->query("SELECT * FROM post WHERE posted = 1 ORDER BY date_created");
-		return $query;
+		return $this->db->query("SELECT * FROM post WHERE posted = 1 ORDER BY date_created");
 	}
 
 	public function get_posted($id) {
-		$query = $this->db->query("SELECT * FROM post WHERE id = '".$id."'");
-		return $query;
+		return $this->db->query("SELECT * FROM post WHERE id = '".$id."'");
+	}
+
+	public function read_all_post($id) {
+		return $this->db->query("SELECT * FROM post WHERE userid = '".$id."' ORDER BY date_updated");
 	}
 
 }

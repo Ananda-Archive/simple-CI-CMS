@@ -22,9 +22,10 @@ class Pages extends CI_Controller {
 
 	public function profile() {
 		$id = $this->session->userdata('id');
+		$a['data'] = $this->m_post->read_all_post($id);
 		$this->load->view("template/navbar");
 		$this->load->view("template/head.php");
-		$this->load->view("user/profile");
+		$this->load->view("user/profile",$a);
 	}
 
 }

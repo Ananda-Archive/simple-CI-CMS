@@ -9,6 +9,9 @@
 		<?php
 
 		if($this->session->userdata('id') != NULL) { ?>
+			<a href="<?=base_url('profile')?>">
+				<button type="button" class="btn btn-primary mr-3"><?php echo $this->session->userdata('name'); ?>'s Profile</button>
+			</a>
 			<a href="<?=base_url('login/uselogout')?>">
 				<button type="button" class="btn btn-danger">Logout</button>
 			</a>

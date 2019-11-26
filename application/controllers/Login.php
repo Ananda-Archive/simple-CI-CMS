@@ -16,6 +16,7 @@ class Login extends CI_Controller {
 			$data = $validate->row_array();
 			$data_session = array(
 				'id' => $data['id'],
+				'name' => $data['name'],
 				'email' => $data['email'],
 				'pass' => $data['password']
 			);
