@@ -32,13 +32,13 @@
                                             $status = $i['posted'];
                                             $date_c_full = $i['date_created'];
                                             $date_u_full = $i['date_updated'];
-                                            $query = $this->db->query("SELECT DATE(date_created) AS date_only FROM post");
+                                            $query = $this->db->query("SELECT DATE(date_created) AS date_only FROM post WHERE id='".$id."'");
                                             $date_c_date_only = $query->row()->date_only;
-                                            $query = $this->db->query("SELECT TIME(date_created) AS time_only FROM post");
+                                            $query = $this->db->query("SELECT TIME(date_created) AS time_only FROM post WHERE id='".$id."'");
                                             $date_c_time_only = $query->row()->time_only;
-                                            $query = $this->db->query("SELECT DATE(date_updated) AS date_only FROM post");
+                                            $query = $this->db->query("SELECT DATE(date_updated) AS date_only FROM post WHERE id='".$id."'");
                                             $date_u_date_only = $query->row()->date_only;
-                                            $query = $this->db->query("SELECT TIME(date_updated) AS time_only FROM post");
+                                            $query = $this->db->query("SELECT TIME(date_updated) AS time_only FROM post WHERE id='".$id."'");
                                             $date_u_time_only = $query->row()->time_only; ?>
                                             <tr>
                                                 <td><?=$title?></td>

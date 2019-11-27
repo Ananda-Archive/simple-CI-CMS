@@ -12,10 +12,44 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('create-post-title','Post Title','required|min_length[4]|max_length[50]');
         
         if ($this->form_validation->run() == FALSE) {
+            $this->m_post->delete($this->input->post('create-post-id'));
             redirect('user');
         } else {
-            $this->m_post->add();
+            // 	// $this->load->helper('date');
+	// 	// $this->title = $post['create-post-title'];
+	// 	// $this->content = $post['create-post-desc'];
+	// 	// $this->posted = 1;
+	// 	// $this->userid = $this->session->userdata('id');
+	// 	// $this->date_created = mdate("%Y-%m-%d %H:%i:%s", now());
+	// 	// $this->date_updated = mdate("%Y-%m-%d %H:%i:%s", now());
+            $post = $this->input->post();
+            $id = $post['create-post-id'];
+            $this->load->helper('date');
+            $data = array(
+                'id' => $id,
+                'title' => $post['create-post-title'],
+                'content' => $post['create-post-desc'],
+                'posted' => 1,
+                'date_created' => mdate("%Y-%m-%d %H:%i:%s", now()),
+                'date_updated' => mdate("%Y-%m-%d %H:%i:%s", now())
+            );
+            $this->m_post->update($data,$id);
             redirect('profile');
+        }
+    }
+
+    public function auto_save() {
+        $post = $this->input->post();
+
+        if ($post['post_id'] == '') {
+            echo $this->m_post->add_autosave();
+        } else {
+            $id = $post['post_id'];
+            $data = array(
+                'title' => $post['post_title'],
+                'content' => $post['post_content']
+            );
+            $this->m_post->update($data,$id);
         }
     }
 
