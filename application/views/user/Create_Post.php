@@ -64,21 +64,6 @@
                     autoSave();
                 }, 2000)
             })
-            // $('#crete-post-title').keyup(function (e) { 
-            //     $.ajax({
-            //         type: "POST",
-            //         url: "<?=base_url('User/auto_save')?>",
-            //         data: {
-            //             post_id: postId,
-            //             post_title: postTitle,
-            //             post_content: postContent
-            //         },
-            //         dataType: "text",
-            //         success: function (response) {
-            //             console.log(response);
-            //         }
-            //     });
-            // });
         </script>
     </body>
 </html>
