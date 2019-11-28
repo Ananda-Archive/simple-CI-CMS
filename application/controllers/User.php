@@ -34,6 +34,15 @@ class User extends CI_Controller {
                 'date_updated' => mdate("%Y-%m-%d %H:%i:%s", now())
             );
             $this->m_post->update($data,$id);
+            $this->load->library('twitteroauth');
+            $this->load->config('twitter');
+            $consumer = $this->config->item('twitter_consumer_token');
+            $consumer_secret = $this->config->item('twitter_consumer_secret');
+            $access_token = $this->config->item('twitter_access_token');
+            $access_token_secret = $this->config->item('twitter_access_secret');
+            $connection = $this->twitteroauth->create($consumer, $consumer_secret, $access_token, $access_token_secret);
+            $connection->post("statuses/update", ["status" => "This is Header: ".$post['create-post-title']."\nThis is Content: ".$post['create-post-desc']]);
+
             redirect('profile');
         }
     }
